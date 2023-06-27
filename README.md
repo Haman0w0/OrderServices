@@ -14,11 +14,11 @@
 10.把部屬完的連結貼到Messaging API裡的Webhook URL<br>
 11.把LINE Messaging API帳號加到想使用的地方<br>
 12.完成<br>
-# 注意事項
+# OrderServicesData.xlsx介紹
 OrderServicesData.xlsx裡的data1是拿來存有執行到的聊天紀錄，而orderdata是拿來存大家點了什麼，最後的restaurant是來存餐廳名稱與菜單圖片，需要放入圖片連結，否則可能會出錯
 # 指令介紹
 1.@[菜單名稱]<br>
-點餐程式啟動，菜單名稱為restaurant裡的名稱，ex:@餐廳1<br>
+點餐程式啟動，菜單名稱為restaurant裡的名稱，ex: @餐廳1<br>
 2.@目前<br>
 查看目前點餐人資訊<br>
 3.@明細<br>
@@ -26,4 +26,12 @@ OrderServicesData.xlsx裡的data1是拿來存有執行到的聊天紀錄，而or
 4.@結算<br>
 點餐程式關閉<br>
 5.@查詢[菜單名稱]<br>
-查看所查詢的菜單圖片，並沒有讓點餐程式啟動，ex:@查詢餐廳1<br>
+查看所查詢的菜單圖片，並沒有讓點餐程式啟動，ex: @查詢餐廳1<br>
+6.[點餐名稱]+[數字]<br>
+點餐，ex: 雞排+5<br>
+7.[點餐名稱]-[數字]<br>
+餐點取消，ex: 雞排-5<br>
+# 注意事項<br>
+1.點餐程式啟動後，需要做@結算才可以讓程式回到初始狀態，沒做@結算時無法再次讓點餐程式啟動<br>
+2.當點餐想取消時，需要減相同數量，ex: 一開始雞排+1，後來取消時雞排-1<br>
+3.OrderServicesData.xlsx裡的restaurant，需要放入圖片連結，否則可能會出錯<br>
