@@ -1,6 +1,6 @@
-const CHANNEL_ACCESS_TOKEN = "";
+const CHANNEL_ACCESS_TOKEN = ""; //line bot token
 
-const sheet_url = 'google試算表網址';
+const sheet_url = ''; //google試算表網址
 var sheet_name = 'data1';
 const SpreadSheet = SpreadsheetApp.openByUrl(sheet_url);
 var reserve_list = SpreadSheet.getSheetByName(sheet_name);
@@ -23,10 +23,6 @@ function doPost(e) {
     return;
   };
 
-  //reserve_list.getRange(current_list_row + 1, 1).setValue(current_time);
-  //reserve_list.getRange(current_list_row + 1, 2).setValue(user_name);
-  //reserve_list.getRange(current_list_row + 1, 3).setValue(userMessage);
-
   if(userMessage.includes("@查詢")){
     savedata(user_name,userMessage);
     let restaurantName = userMessage.substring(userMessage.indexOf("@查詢")+3);
@@ -46,7 +42,7 @@ function doPost(e) {
         restaurantSet("","",false);
         orderSum(true);
         send_to_line(replyToken,reply_message);
-      }else if(userMessage.includes("+") && (userMessage.lastIndexOf("-") == -1)){  //購買用加的    //||userMessage.includes("+1")||userMessage.includes("+2")||userMessage.includes("+3")
+      }else if(userMessage.includes("+") && (userMessage.lastIndexOf("-") == -1)){  //購買用加的
         savedata(user_name,userMessage);
         let keyNum = userMessage.lastIndexOf("+");
         let foodName = userMessage.substring(0,keyNum).split(" ").join("");
